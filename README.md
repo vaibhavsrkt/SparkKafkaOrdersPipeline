@@ -1,19 +1,39 @@
 ## Spark Kafka Streaming Pipeline (End-to-End Data Engineering Project)
 
-This repository contains a production-style real-time data pipeline built using Apache Kafka and Apache Spark Structured Streaming.
-The project simulates e-commerce order events, ingests them via Kafka, processes them using Spark, and persists them into Bronze, Silver, and Gold layers using Parquet.
+his repository implements a production-style real-time data pipeline using Apache Kafka and Apache Spark Structured Streaming.
+The pipeline simulates e-commerce order events, ingests them through Kafka, processes them using Spark with schema enforcement, deduplication, and fault tolerance, and persists the data into Bronze, Silver, and Gold layers using Parquet.
+This project mirrors how modern data engineering systems are built in real-world environments.
 
 ## Architecture Overview
 
-Kafka (Order Events)
-        ↓
+Kafka Producer (Order Events - JSON)
+            |
+            v
+Kafka Topic (custords)
+            |
+            v
 Spark Structured Streaming
-        ↓
-Bronze Layer (Raw Data)
-        ↓
+  - Schema Enforcement
+  - JSON Parsing
+  - Offset Management
+  - Checkpointing
+            |
+            v
+Bronze Layer (Raw Parquet)
+  - Immutable
+  - Replayable
+            |
+            v
 Silver Layer (Cleaned & Deduplicated)
-        ↓
-Gold Layer (Aggregated Analytics)
+  - Filtered (PAID orders)
+  - Flattened schema
+  - Exactly-once semantics
+            |
+            v
+Gold Layer (Aggregations)
+  - Revenue by category
+  - Top products
+  - Customer spend analytics
 
 ## Tech Stack
 
@@ -47,59 +67,47 @@ JupyterLab – development & experimentation
 ├── .ipynb_checkpoints/
 └── README.md
 
-## Pipeline Details
+# Pipeline Details
 ## Kafka Producer
 
 Generates JSON order events
-
 Simulates real-world e-commerce activity
-
 Publishes events to a Kafka topic
 
-Notebook:
+## Notebook:
 
-KafkaGenerateOrdersJsonData.ipynb
-
+#KafkaGenerateOrdersJsonData.ipynb
 ## Bronze Layer (Raw Ingestion)
+Reads from Kafka using Spark Structured Streaming
+Applies schema using from_json
+Writes raw, immutable data to Parquet
 
-Reads events from Kafka
-
-Stores raw data as-is
-
-Provides replay and audit capability
-
-✔ Immutable
-✔ Schema-flexible
-✔ Append-only
+### Key Characteristics
+Append-only
+Schema-flexible
+Replayable
+Audit-friendly
 
 ## Silver Layer (Clean & Enriched)
-
-Parses timestamps
-
-Filters valid orders (PAID)
-
+Converts event timestamps
+Filters valid orders (status = PAID)
 Deduplicates using event_id
+Flattens nested JSON structure
 
-Flattens JSON structure
-
-✔ Data quality enforcement
-✔ Exactly-once semantics
+### Key Characteristics
+Data quality enforcement
+Exactly-once processing (checkpointing + offsets)
+Analytics-ready schema
 
 ## Gold Layer (Analytics)
 
-Aggregations such as:
+Aggregates streaming data for insights
+Supports windowed and non-windowed aggregations
 
+### Examples
 Revenue by category
-
 Best-selling products
-
-Optimized for analytics and reporting
-
-✔ Business-ready datasets
-
-## Example Analytics
-
-Best-selling products by quantity
+Top customers by spend
 
 df.groupBy("product_name") \
   .agg(sum("quantity").alias("total_qty")) \
@@ -107,14 +115,16 @@ df.groupBy("product_name") \
 
 ## Production Concepts Demonstrated
 
-Structured Streaming with checkpoints
-Exactly-once processing semantics
+## Structured Streaming with checkpoints
 Kafka offset management
-Layered data architecture (Bronze / Silver / Gold)
-File-based analytics storage
-Partition-aware writes
-Data quality handling
-Debugging with memory sink
+Spark Structured Streaming checkpoints
+Exactly-once processing semantics
+Schema enforcement on streaming data
+Bronze / Silver / Gold architecture
+Watermarking & windowed aggregations
+Fault-tolerant streaming writes
+Memory sink for debugging
+Partition-aware Parquet storage
 
 ## How to Run (High Level)
 
@@ -122,27 +132,22 @@ Start Kafka & Spark
 Run KafkaGenerateOrdersJsonData.ipynb
 Run Spark_Kafka_Pipeline.ipynb
 
-Observe data written under:
+Observe data written to:
 data/bronze/
 data/silver/
 data/gold/
 
-This project mirrors real-world data engineering pipelines used in production:
-Kafka is treated as a transport layer
-Spark handles stream processing
-Data is persisted in analytics-ready formats
-Checkpoints ensure fault tolerance
-It demonstrates practical, hands-on understanding beyond toy examples.
-
 ## Possible Enhancements
 
-Delta Lake integration
-Windowed aggregations
-Schema evolution handling
-Monitoring dashboards
-CI/CD for data pipelines
+Delta Lake integration (ACID + schema evolution)
+Late-arriving data handling
+Stateful joins
+Data quality metrics & alerts
+Monitoring via Spark metrics / Prometheus
+CI/CD for streaming pipelines
+Cloud deployment (Azure / AWS)
 
 👤 Author
 
 Vaibhav Sarkate
-Aspiring Data Engineer | Spark | Kafka | SQL | Python
+Data Engineer | Spark | Kafka | SQL | Python
