@@ -3,8 +3,6 @@
 This repository contains a production-style real-time data pipeline built using Apache Kafka and Apache Spark Structured Streaming.
 The project simulates e-commerce order events, ingests them via Kafka, processes them using Spark, and persists them into Bronze, Silver, and Gold layers using Parquet.
 
-This project is designed specifically for Data Engineering job preparation and portfolio showcase.
-
 ## Architecture Overview
 
 Kafka (Order Events)
