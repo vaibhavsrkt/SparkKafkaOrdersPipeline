@@ -50,7 +50,7 @@ JupyterLab – development & experimentation
 └── README.md
 
 ## Pipeline Details
-# Kafka Producer
+## Kafka Producer
 
 Generates JSON order events
 
@@ -62,7 +62,7 @@ Notebook:
 
 KafkaGenerateOrdersJsonData.ipynb
 
-2️⃣ Bronze Layer (Raw Ingestion)
+## Bronze Layer (Raw Ingestion)
 
 Reads events from Kafka
 
@@ -74,7 +74,7 @@ Provides replay and audit capability
 ✔ Schema-flexible
 ✔ Append-only
 
-3️⃣ Silver Layer (Clean & Enriched)
+## Silver Layer (Clean & Enriched)
 
 Parses timestamps
 
@@ -87,7 +87,7 @@ Flattens JSON structure
 ✔ Data quality enforcement
 ✔ Exactly-once semantics
 
-4️⃣ Gold Layer (Analytics)
+## Gold Layer (Analytics)
 
 Aggregations such as:
 
@@ -99,7 +99,7 @@ Optimized for analytics and reporting
 
 ✔ Business-ready datasets
 
-🧪 Example Analytics
+## Example Analytics
 
 Best-selling products by quantity
 
@@ -107,72 +107,41 @@ df.groupBy("product_name") \
   .agg(sum("quantity").alias("total_qty")) \
   .orderBy(col("total_qty").desc())
 
-🛡️ Production Concepts Demonstrated
+## Production Concepts Demonstrated
 
 Structured Streaming with checkpoints
-
 Exactly-once processing semantics
-
 Kafka offset management
-
 Layered data architecture (Bronze / Silver / Gold)
-
 File-based analytics storage
-
 Partition-aware writes
-
 Data quality handling
-
 Debugging with memory sink
 
-▶️ How to Run (High Level)
+## How to Run (High Level)
 
-Start Kafka & Spark using Docker
-
+Start Kafka & Spark
 Run KafkaGenerateOrdersJsonData.ipynb
-
 Run Spark_Kafka_Pipeline.ipynb
 
 Observe data written under:
-
 data/bronze/
 data/silver/
 data/gold/
 
-🧠 Why This Project Matters
-
 This project mirrors real-world data engineering pipelines used in production:
-
 Kafka is treated as a transport layer
-
 Spark handles stream processing
-
 Data is persisted in analytics-ready formats
-
 Checkpoints ensure fault tolerance
-
 It demonstrates practical, hands-on understanding beyond toy examples.
 
-🎯 Intended Audience
-
-Data Engineer roles (Junior / Mid-Level)
-
-Big Data / Streaming Systems interviews
-
-Spark + Kafka hands-on learning
-
-Portfolio showcase for recruiters
-
-📈 Possible Enhancements
+## Possible Enhancements
 
 Delta Lake integration
-
 Windowed aggregations
-
 Schema evolution handling
-
 Monitoring dashboards
-
 CI/CD for data pipelines
 
 👤 Author
