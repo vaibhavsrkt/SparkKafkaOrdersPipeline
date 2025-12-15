@@ -17,6 +17,49 @@ Silver Layer (Cleaned & Deduplicated)
         ↓
 Gold Layer (Aggregated Analytics)
 
+
+## Architecture Diagram
++---------------------+
+| Kafka Producer      |
+| (Order Events JSON) |
++----------+----------+
+           |
+           v
++---------------------+
+| Kafka Topic         |
+| cust_ords           |
++----------+----------+
+           |
+           v
++------------------------------+
+| Spark Structured Streaming   |
+|                              |
+|  - JSON parsing              |
+|  - Schema enforcement        |
+|  - Deduplication             |
+|  - Checkpointing             |
++----------+-------------------+
+           |
+           v
++------------------+
+| Bronze Layer     |
+| Raw Parquet Data |
++------------------+
+           |
+           v
++------------------+
+| Silver Layer     |
+| Cleaned Orders   |
++------------------+
+           |
+           v
++------------------+
+| Gold Layer       |
+| Aggregations     |
++------------------+
+
+
+
 ## Tech Stack
 
 Apache Kafka – real-time event ingestion
