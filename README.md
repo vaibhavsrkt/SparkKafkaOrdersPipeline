@@ -1,6 +1,6 @@
 ## Spark Kafka Streaming Pipeline (End-to-End Data Engineering Project)
 
-his repository implements a production-style real-time data pipeline using Apache Kafka and Apache Spark Structured Streaming.
+This repository implements a production-style real-time data pipeline using Apache Kafka and Apache Spark Structured Streaming.
 The pipeline simulates e-commerce order events, ingests them through Kafka, processes them using Spark with schema enforcement, deduplication, and fault tolerance, and persists the data into Bronze, Silver, and Gold layers using Parquet.
 This project mirrors how modern data engineering systems are built in real-world environments.
 
