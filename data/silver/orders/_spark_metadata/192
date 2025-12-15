@@ -1,0 +1,5 @@
+v1
+{"path":"file:///home/jupyter/jupyter/data/silver/orders/part-00000-94fcc51e-2689-435f-860b-c863483eec47-c000.snappy.parquet","size":4002,"isDir":false,"modificationTime":1765770197646,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/silver/orders/part-00001-881710af-fa8b-405d-a4b3-1675d796e6cf-c000.snappy.parquet","size":4479,"isDir":false,"modificationTime":1765770197646,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/silver/orders/part-00002-3b051241-87b8-4b2d-863e-628c9bbfe2e8-c000.snappy.parquet","size":4216,"isDir":false,"modificationTime":1765770197650,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/silver/orders/part-00003-046b1b0a-a979-4388-85e2-02f08c3dd329-c000.snappy.parquet","size":4065,"isDir":false,"modificationTime":1765770197646,"blockReplication":1,"blockSize":33554432,"action":"add"}

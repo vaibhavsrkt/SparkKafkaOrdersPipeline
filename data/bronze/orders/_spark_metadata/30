@@ -1,0 +1,8 @@
+v1
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00000-a8520506-c328-4ce0-981a-a429539bf2b4-c000.snappy.parquet","size":5950,"isDir":false,"modificationTime":1765769446798,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00001-c139d1e2-3658-4c94-a1c3-1feb501a97ce-c000.snappy.parquet","size":6039,"isDir":false,"modificationTime":1765769446798,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00002-ae95851d-f265-499c-ac1e-db109c4ca864-c000.snappy.parquet","size":5964,"isDir":false,"modificationTime":1765769446798,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00003-20039eb2-62ac-4cfc-a06a-db7cb48045e2-c000.snappy.parquet","size":6039,"isDir":false,"modificationTime":1765769446802,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00004-7f530722-f6d3-408b-bbb6-e2c5a9872a22-c000.snappy.parquet","size":6152,"isDir":false,"modificationTime":1765769446798,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00005-b77f122d-2b71-4a52-bb7d-2b89f1001bf7-c000.snappy.parquet","size":5954,"isDir":false,"modificationTime":1765769446798,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00006-97652abb-aa6b-4c6a-aae8-7c3e24b0a0c8-c000.snappy.parquet","size":6046,"isDir":false,"modificationTime":1765769446802,"blockReplication":1,"blockSize":33554432,"action":"add"}

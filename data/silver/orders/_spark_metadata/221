@@ -1,0 +1,3 @@
+v1
+{"path":"file:///home/jupyter/jupyter/data/silver/orders/part-00000-46ceaf75-4954-4593-9014-8e42f03480cf-c000.snappy.parquet","size":1423,"isDir":false,"modificationTime":1765775906610,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/silver/orders/part-00001-35033666-dfa1-4d9e-bf25-60d6c6c757d9-c000.snappy.parquet","size":4080,"isDir":false,"modificationTime":1765775906610,"blockReplication":1,"blockSize":33554432,"action":"add"}

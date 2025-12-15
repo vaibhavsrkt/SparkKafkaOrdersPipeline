@@ -1,0 +1,3 @@
+v1
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00000-0520c591-65dd-44af-8dc5-6b6ecaf11f56-c000.snappy.parquet","size":6026,"isDir":false,"modificationTime":1765769437746,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/jupyter/jupyter/data/bronze/orders/part-00001-080b4cc9-32f9-426f-97b0-a903bf0d06e0-c000.snappy.parquet","size":5998,"isDir":false,"modificationTime":1765769437746,"blockReplication":1,"blockSize":33554432,"action":"add"}
